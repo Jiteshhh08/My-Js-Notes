@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1 id="JITESH">JITESH</h1>
+    <h3 id="TextChange">Thank You</h3>
+    <button id="startBtn">START</button>
+    <button id="stopBtn">STOP</button>
+</body>
+<script>
+
+
+    //
+
+
+    let intervalId = null;
+
+    document.getElementById('startBtn').addEventListener('click', () => {
+      if (!intervalId) {
+        intervalId = setInterval(() => {
+          console.log('Info: Logging data to console...');
+        }, 1000); // logs every 1 second
+      }
+    });
+
+    document.getElementById('stopBtn').addEventListener('click', () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        console.log('Logging stopped.');
+      }
+    });
+
+</script>
+</html>

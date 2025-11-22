@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1 id="JITESH">JITESH</h1>
+    <h3 id="TextChange">Thank You</h3>
+    <button id="stop">STOP</button>
+</body>
+<script>
+
+    setTimeout(function() {
+        // console.log("Jitesh Jha")        
+    }, 3000);
+
+    const SayyJit = function(){
+        // console.log("Jit")
+    }
+    setTimeout(SayyJit , 2000);
+
+
+    const Jitesh = document.querySelector('#JITESH')
+    Jitesh.innerHTML = "JAVASCRIPT"
+
+    
+    const TextChangingFunc = function() {
+        const TextChange = document.querySelector('#TextChange').innerHTML = "ARIGATO!"
+    }
+
+    const ChangeMe = setTimeout(TextChangingFunc , 2000);
+
+    //to stop setTimeout we use clearTimeout
+
+    document.querySelector("#stop").addEventListener('click', function(){
+        clearTimeout(ChangeMe)
+        console.log("STOPPED");       
+    })
+
+</script>
+</html>
